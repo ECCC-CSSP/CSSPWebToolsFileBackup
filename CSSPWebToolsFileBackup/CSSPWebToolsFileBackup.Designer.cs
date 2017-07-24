@@ -30,14 +30,14 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panelTopTop = new System.Windows.Forms.Panel();
-            this.panelTopBottom = new System.Windows.Forms.Panel();
-            this.lblStatusText = new System.Windows.Forms.Label();
-            this.lblStatusValue = new System.Windows.Forms.Label();
-            this.lblStartDirectory = new System.Windows.Forms.Label();
-            this.lblBackupDirectory = new System.Windows.Forms.Label();
-            this.textBoxStartDirectory = new System.Windows.Forms.TextBox();
-            this.textBoxBackupDirectory = new System.Windows.Forms.TextBox();
             this.butStartBackup = new System.Windows.Forms.Button();
+            this.textBoxBackupDirectory = new System.Windows.Forms.TextBox();
+            this.textBoxStartDirectory = new System.Windows.Forms.TextBox();
+            this.lblBackupDirectory = new System.Windows.Forms.Label();
+            this.lblStartDirectory = new System.Windows.Forms.Label();
+            this.panelTopBottom = new System.Windows.Forms.Panel();
+            this.lblStatusValue = new System.Windows.Forms.Label();
+            this.lblStatusText = new System.Windows.Forms.Label();
             this.richTextBoxStatus = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -79,59 +79,15 @@
             this.panelTopTop.Size = new System.Drawing.Size(908, 136);
             this.panelTopTop.TabIndex = 0;
             // 
-            // panelTopBottom
+            // butStartBackup
             // 
-            this.panelTopBottom.Controls.Add(this.lblStatusValue);
-            this.panelTopBottom.Controls.Add(this.lblStatusText);
-            this.panelTopBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelTopBottom.Location = new System.Drawing.Point(0, 136);
-            this.panelTopBottom.Name = "panelTopBottom";
-            this.panelTopBottom.Size = new System.Drawing.Size(908, 28);
-            this.panelTopBottom.TabIndex = 1;
-            // 
-            // lblStatusText
-            // 
-            this.lblStatusText.AutoSize = true;
-            this.lblStatusText.Location = new System.Drawing.Point(12, 8);
-            this.lblStatusText.Name = "lblStatusText";
-            this.lblStatusText.Size = new System.Drawing.Size(40, 13);
-            this.lblStatusText.TabIndex = 0;
-            this.lblStatusText.Text = "Status:";
-            // 
-            // lblStatusValue
-            // 
-            this.lblStatusValue.AutoSize = true;
-            this.lblStatusValue.Location = new System.Drawing.Point(58, 8);
-            this.lblStatusValue.Name = "lblStatusValue";
-            this.lblStatusValue.Size = new System.Drawing.Size(22, 13);
-            this.lblStatusValue.TabIndex = 1;
-            this.lblStatusValue.Text = "OK";
-            // 
-            // lblStartDirectory
-            // 
-            this.lblStartDirectory.AutoSize = true;
-            this.lblStartDirectory.Location = new System.Drawing.Point(190, 13);
-            this.lblStartDirectory.Name = "lblStartDirectory";
-            this.lblStartDirectory.Size = new System.Drawing.Size(77, 13);
-            this.lblStartDirectory.TabIndex = 0;
-            this.lblStartDirectory.Text = "Start Directory:";
-            // 
-            // lblBackupDirectory
-            // 
-            this.lblBackupDirectory.AutoSize = true;
-            this.lblBackupDirectory.Location = new System.Drawing.Point(190, 44);
-            this.lblBackupDirectory.Name = "lblBackupDirectory";
-            this.lblBackupDirectory.Size = new System.Drawing.Size(92, 13);
-            this.lblBackupDirectory.TabIndex = 0;
-            this.lblBackupDirectory.Text = "Backup Directory:";
-            // 
-            // textBoxStartDirectory
-            // 
-            this.textBoxStartDirectory.Location = new System.Drawing.Point(284, 13);
-            this.textBoxStartDirectory.Name = "textBoxStartDirectory";
-            this.textBoxStartDirectory.Size = new System.Drawing.Size(599, 20);
-            this.textBoxStartDirectory.TabIndex = 1;
-            this.textBoxStartDirectory.Text = "E:\\inetpub\\wwwroot\\csspwebtools\\";
+            this.butStartBackup.Location = new System.Drawing.Point(32, 13);
+            this.butStartBackup.Name = "butStartBackup";
+            this.butStartBackup.Size = new System.Drawing.Size(120, 23);
+            this.butStartBackup.TabIndex = 3;
+            this.butStartBackup.Text = "Start Backup";
+            this.butStartBackup.UseVisualStyleBackColor = true;
+            this.butStartBackup.Click += new System.EventHandler(this.butStartBackup_Click);
             // 
             // textBoxBackupDirectory
             // 
@@ -142,15 +98,59 @@
             this.textBoxBackupDirectory.Text = "\\\\int.ec.gc.ca\\SHARES\\M\\MQEM_NATIONAL\\Charles_E_Drive_Backup\\inetpub\\wwwroot\\cssp" +
     "webtools\\";
             // 
-            // butStartBackup
+            // textBoxStartDirectory
             // 
-            this.butStartBackup.Location = new System.Drawing.Point(32, 13);
-            this.butStartBackup.Name = "butStartBackup";
-            this.butStartBackup.Size = new System.Drawing.Size(120, 23);
-            this.butStartBackup.TabIndex = 3;
-            this.butStartBackup.Text = "Start Backup";
-            this.butStartBackup.UseVisualStyleBackColor = true;
-            this.butStartBackup.Click += new System.EventHandler(this.butStartBackup_Click);
+            this.textBoxStartDirectory.Location = new System.Drawing.Point(284, 13);
+            this.textBoxStartDirectory.Name = "textBoxStartDirectory";
+            this.textBoxStartDirectory.Size = new System.Drawing.Size(599, 20);
+            this.textBoxStartDirectory.TabIndex = 1;
+            this.textBoxStartDirectory.Text = "E:\\inetpub\\wwwroot\\csspwebtools\\";
+            // 
+            // lblBackupDirectory
+            // 
+            this.lblBackupDirectory.AutoSize = true;
+            this.lblBackupDirectory.Location = new System.Drawing.Point(190, 44);
+            this.lblBackupDirectory.Name = "lblBackupDirectory";
+            this.lblBackupDirectory.Size = new System.Drawing.Size(92, 13);
+            this.lblBackupDirectory.TabIndex = 0;
+            this.lblBackupDirectory.Text = "Backup Directory:";
+            // 
+            // lblStartDirectory
+            // 
+            this.lblStartDirectory.AutoSize = true;
+            this.lblStartDirectory.Location = new System.Drawing.Point(190, 13);
+            this.lblStartDirectory.Name = "lblStartDirectory";
+            this.lblStartDirectory.Size = new System.Drawing.Size(77, 13);
+            this.lblStartDirectory.TabIndex = 0;
+            this.lblStartDirectory.Text = "Start Directory:";
+            // 
+            // panelTopBottom
+            // 
+            this.panelTopBottom.Controls.Add(this.lblStatusValue);
+            this.panelTopBottom.Controls.Add(this.lblStatusText);
+            this.panelTopBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelTopBottom.Location = new System.Drawing.Point(0, 136);
+            this.panelTopBottom.Name = "panelTopBottom";
+            this.panelTopBottom.Size = new System.Drawing.Size(908, 28);
+            this.panelTopBottom.TabIndex = 1;
+            // 
+            // lblStatusValue
+            // 
+            this.lblStatusValue.AutoSize = true;
+            this.lblStatusValue.Location = new System.Drawing.Point(58, 8);
+            this.lblStatusValue.Name = "lblStatusValue";
+            this.lblStatusValue.Size = new System.Drawing.Size(22, 13);
+            this.lblStatusValue.TabIndex = 1;
+            this.lblStatusValue.Text = "OK";
+            // 
+            // lblStatusText
+            // 
+            this.lblStatusText.AutoSize = true;
+            this.lblStatusText.Location = new System.Drawing.Point(12, 8);
+            this.lblStatusText.Name = "lblStatusText";
+            this.lblStatusText.Size = new System.Drawing.Size(40, 13);
+            this.lblStatusText.TabIndex = 0;
+            this.lblStatusText.Text = "Status:";
             // 
             // richTextBoxStatus
             // 
