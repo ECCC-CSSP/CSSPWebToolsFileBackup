@@ -30,6 +30,8 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panelTopTop = new System.Windows.Forms.Panel();
+            this.textBoxLogFileName = new System.Windows.Forms.TextBox();
+            this.lblLogFileName = new System.Windows.Forms.Label();
             this.butStop = new System.Windows.Forms.Button();
             this.lblTotalFilesCount = new System.Windows.Forms.Label();
             this.lblTotal2 = new System.Windows.Forms.Label();
@@ -56,8 +58,6 @@
             this.lblStatusValue = new System.Windows.Forms.Label();
             this.lblStatusText = new System.Windows.Forms.Label();
             this.richTextBoxStatus = new System.Windows.Forms.RichTextBox();
-            this.textBoxLogFileName = new System.Windows.Forms.TextBox();
-            this.lblLogFileName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -114,6 +114,23 @@
             this.panelTopTop.Name = "panelTopTop";
             this.panelTopTop.Size = new System.Drawing.Size(908, 160);
             this.panelTopTop.TabIndex = 0;
+            // 
+            // textBoxLogFileName
+            // 
+            this.textBoxLogFileName.Location = new System.Drawing.Point(284, 74);
+            this.textBoxLogFileName.Name = "textBoxLogFileName";
+            this.textBoxLogFileName.Size = new System.Drawing.Size(599, 20);
+            this.textBoxLogFileName.TabIndex = 20;
+            this.textBoxLogFileName.Text = "C:\\FileBackup\\Log.csv";
+            // 
+            // lblLogFileName
+            // 
+            this.lblLogFileName.AutoSize = true;
+            this.lblLogFileName.Location = new System.Drawing.Point(235, 74);
+            this.lblLogFileName.Name = "lblLogFileName";
+            this.lblLogFileName.Size = new System.Drawing.Size(47, 13);
+            this.lblLogFileName.TabIndex = 19;
+            this.lblLogFileName.Text = "Log File:";
             // 
             // butStop
             // 
@@ -352,23 +369,6 @@
             this.richTextBoxStatus.Size = new System.Drawing.Size(908, 362);
             this.richTextBoxStatus.TabIndex = 0;
             this.richTextBoxStatus.Text = "";
-            // 
-            // textBoxLogFileName
-            // 
-            this.textBoxLogFileName.Location = new System.Drawing.Point(284, 74);
-            this.textBoxLogFileName.Name = "textBoxLogFileName";
-            this.textBoxLogFileName.Size = new System.Drawing.Size(599, 20);
-            this.textBoxLogFileName.TabIndex = 20;
-            this.textBoxLogFileName.Text = "C:\\FileBackup\\Log.csv";
-            // 
-            // lblLogFileName
-            // 
-            this.lblLogFileName.AutoSize = true;
-            this.lblLogFileName.Location = new System.Drawing.Point(235, 74);
-            this.lblLogFileName.Name = "lblLogFileName";
-            this.lblLogFileName.Size = new System.Drawing.Size(47, 13);
-            this.lblLogFileName.TabIndex = 19;
-            this.lblLogFileName.Text = "Log File:";
             // 
             // CSSPWebToolsFileBackup
             // 
