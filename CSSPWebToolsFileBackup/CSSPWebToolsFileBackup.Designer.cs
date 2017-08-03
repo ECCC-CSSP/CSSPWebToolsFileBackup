@@ -30,6 +30,8 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panelTopTop = new System.Windows.Forms.Panel();
+            this.lblTimeSecondValue = new System.Windows.Forms.Label();
+            this.lblTimeSeconds = new System.Windows.Forms.Label();
             this.textBoxLogFileName = new System.Windows.Forms.TextBox();
             this.lblLogFileName = new System.Windows.Forms.Label();
             this.butStop = new System.Windows.Forms.Button();
@@ -87,6 +89,8 @@
             // 
             // panelTopTop
             // 
+            this.panelTopTop.Controls.Add(this.lblTimeSecondValue);
+            this.panelTopTop.Controls.Add(this.lblTimeSeconds);
             this.panelTopTop.Controls.Add(this.textBoxLogFileName);
             this.panelTopTop.Controls.Add(this.lblLogFileName);
             this.panelTopTop.Controls.Add(this.butStop);
@@ -114,6 +118,24 @@
             this.panelTopTop.Name = "panelTopTop";
             this.panelTopTop.Size = new System.Drawing.Size(908, 160);
             this.panelTopTop.TabIndex = 0;
+            // 
+            // lblTimeSecondValue
+            // 
+            this.lblTimeSecondValue.AutoSize = true;
+            this.lblTimeSecondValue.Location = new System.Drawing.Point(681, 115);
+            this.lblTimeSecondValue.Name = "lblTimeSecondValue";
+            this.lblTimeSecondValue.Size = new System.Drawing.Size(41, 13);
+            this.lblTimeSecondValue.TabIndex = 22;
+            this.lblTimeSecondValue.Text = "[empty]";
+            // 
+            // lblTimeSeconds
+            // 
+            this.lblTimeSeconds.AutoSize = true;
+            this.lblTimeSeconds.Location = new System.Drawing.Point(625, 115);
+            this.lblTimeSeconds.Name = "lblTimeSeconds";
+            this.lblTimeSeconds.Size = new System.Drawing.Size(47, 13);
+            this.lblTimeSeconds.TabIndex = 21;
+            this.lblTimeSeconds.Text = "Time (s):";
             // 
             // textBoxLogFileName
             // 
@@ -422,6 +444,8 @@
         private System.Windows.Forms.Button butStop;
         private System.Windows.Forms.TextBox textBoxLogFileName;
         private System.Windows.Forms.Label lblLogFileName;
+        private System.Windows.Forms.Label lblTimeSecondValue;
+        private System.Windows.Forms.Label lblTimeSeconds;
     }
 }
 

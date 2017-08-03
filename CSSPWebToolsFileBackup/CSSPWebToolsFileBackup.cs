@@ -20,7 +20,9 @@ namespace CSSPWebToolsFileBackup
         private int ModifiedFileCount = 0;
         private int TotalFilesCount = 0;
         private int TotalDirectoriesCount = 0;
+        private int TotalSeconds = 0;
         private bool PleaseStop = false;
+        private DateTime StartTime = DateTime.Now;
         #endregion Variables
 
         #region Properties
@@ -37,6 +39,7 @@ namespace CSSPWebToolsFileBackup
         #region Events
         private void butStartBackup_Click(object sender, EventArgs e)
         {
+            StartTime = DateTime.Now;
             StartBackup();
         }
         private void butStop_Click(object sender, EventArgs e)
@@ -51,6 +54,10 @@ namespace CSSPWebToolsFileBackup
         #region Functions private
         private void DoDir(DirectoryInfo FromDir)
         {
+            TimeSpan timeSpan = new TimeSpan(DateTime.Now.Ticks - StartTime.Ticks);
+            lblTimeSecondValue.Text = timeSpan.TotalSeconds.ToString("F0");
+            TotalSeconds = (int)timeSpan.TotalSeconds;
+
             TotalDirectoriesCount += 1;
             lblTotalDirectoriesCount.Text = TotalDirectoriesCount.ToString();
             lblTotalDirectoriesCount.Refresh();
@@ -233,6 +240,9 @@ namespace CSSPWebToolsFileBackup
                     richTextBoxStatus.AppendText(ex.Message + "\r\n");
                 }
             }
+            TimeSpan timeSpan = new TimeSpan(DateTime.Now.Ticks - StartTime.Ticks);
+            lblTimeSecondValue.Text = timeSpan.TotalSeconds.ToString("F0");
+            TotalSeconds = (int)timeSpan.TotalSeconds;
 
             lblStatusValue.Text = "Saving " + fi.FullName;
             if (!fi.Exists)
@@ -240,8 +250,8 @@ namespace CSSPWebToolsFileBackup
                 try
                 {
                     StreamWriter sw = fi.AppendText();
-                    sw.WriteLine("Date,# NF,# ND,# MF,# MD,# TNF,# TND");
-                    sw.WriteLine(DateTime.Now.ToString("yyyy-MM-dd") + "," + NewFileCount + "," + NewDirCount + "," + ModifiedFileCount + "," + ModifiedDirCount + "," + TotalFilesCount + "," + TotalDirectoriesCount);
+                    sw.WriteLine("Date,# NF,# ND,# MF,# MD,# TNF,# TND, # Sec");
+                    sw.WriteLine(DateTime.Now.ToString("yyyy-MM-dd") + "," + NewFileCount + "," + NewDirCount + "," + ModifiedFileCount + "," + ModifiedDirCount + "," + TotalFilesCount + "," + TotalDirectoriesCount, "," + TotalSeconds);
                     sw.Close();
                 }
                 catch (Exception ex)
@@ -254,7 +264,7 @@ namespace CSSPWebToolsFileBackup
                 try
                 {
                     StreamWriter sw = fi.AppendText();
-                    sw.WriteLine(DateTime.Now.ToString("yyyy-MM-dd") + "," + NewFileCount + "," + NewDirCount + "," + ModifiedFileCount + "," + ModifiedDirCount + "," + TotalFilesCount + "," + TotalDirectoriesCount);
+                    sw.WriteLine(DateTime.Now.ToString("yyyy-MM-dd") + "," + NewFileCount + "," + NewDirCount + "," + ModifiedFileCount + "," + ModifiedDirCount + "," + TotalFilesCount + "," + TotalDirectoriesCount + "," + TotalSeconds);
                     sw.Close();
                 }
                 catch (Exception ex)
@@ -270,8 +280,8 @@ namespace CSSPWebToolsFileBackup
                     }
 
                     StreamWriter sw = fi.AppendText();
-                    sw.WriteLine("Date,# NF,# ND,# MF,# MD,# TNF,# TND");
-                    sw.WriteLine(DateTime.Now.ToString("yyyy-MM-dd") + "," + NewFileCount + "," + NewDirCount + "," + ModifiedFileCount + "," + ModifiedDirCount + "," + TotalFilesCount + "," + TotalDirectoriesCount);
+                    sw.WriteLine("Date,# NF,# ND,# MF,# MD,# TNF,# TND,# Sec");
+                    sw.WriteLine(DateTime.Now.ToString("yyyy-MM-dd") + "," + NewFileCount + "," + NewDirCount + "," + ModifiedFileCount + "," + ModifiedDirCount + "," + TotalFilesCount + "," + TotalDirectoriesCount + "," + TotalSeconds);
                     sw.Close();
                 }
             }
@@ -296,6 +306,7 @@ namespace CSSPWebToolsFileBackup
             lblModifiedFileCount.Text = 0.ToString();
             lblTotalDirectoriesCount.Text = 0.ToString();
             lblTotalFilesCount.Text = 0.ToString();
+            lblTimeSecondValue.Text = 0.ToString();
         }
         #endregion Functions private 
 
