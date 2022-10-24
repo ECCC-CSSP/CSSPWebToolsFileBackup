@@ -121,10 +121,18 @@ namespace CSSPWebToolsFileBackup
                             lblStatusValue.Refresh();
                             Application.DoEvents();
 
-                            File.Copy(fiFrom.FullName, fiTo.FullName, true);
-                            NewFileCount += 1;
-                            lblNewFileCount.Text = NewFileCount.ToString();
-                            lblNewFileCount.Refresh();
+                            if (fiFrom.Extension.ToLower() == ".lnk")
+                            {
+                                richTextBoxStatus.AppendText("Skipping [" + fiFrom.FullName + "]\r\n");
+                            }
+                            else
+                            {
+                                File.Copy(fiFrom.FullName, fiTo.FullName, true);
+                                NewFileCount += 1;
+                                lblNewFileCount.Text = NewFileCount.ToString();
+                                lblNewFileCount.Refresh();
+                            }
+
                             Application.DoEvents();
                         }
                         catch (Exception ex)
